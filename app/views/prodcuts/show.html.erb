@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @prodcut.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @prodcut.price %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @prodcut.quantity %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @prodcut.description %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @prodcut.brand %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @prodcut.rating %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @prodcut.category_id %>
+</p>
+
+<%= link_to 'Edit', edit_prodcut_path(@prodcut) %> |
+<%= link_to 'Back', prodcuts_path %>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Prodcuts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Description</th>
+      <th>Brand</th>
+      <th>Rating</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prodcuts.each do |prodcut| %>
+      <tr>
+        <td><%= prodcut.name %></td>
+        <td><%= prodcut.price %></td>
+        <td><%= prodcut.quantity %></td>
+        <td><%= prodcut.description %></td>
+        <td><%= prodcut.brand %></td>
+        <td><%= prodcut.rating %></td>
+        <td><%= prodcut.category_id %></td>
+        <td><%= link_to 'Show', prodcut %></td>
+        <td><%= link_to 'Edit', edit_prodcut_path(prodcut) %></td>
+        <td><%= link_to 'Destroy', prodcut, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prodcut', new_prodcut_path %>
