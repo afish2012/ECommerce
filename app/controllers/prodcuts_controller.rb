@@ -15,6 +15,7 @@ class ProdcutsController < ApplicationController
   # GET /prodcuts/new
   def new
     @prodcut = Prodcut.new
+    @categories = Category.all
   end
 
   # GET /prodcuts/1/edit
@@ -69,6 +70,6 @@ class ProdcutsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prodcut_params
-      params.require(:prodcut).permit(:name, :price, :quantity, :description, :brand, :rating, :category_id)
+      params.require(:prodcut).permit(:name, :price, :quantity, :description, :brand, :rating, :category_id, :image)
     end
 end

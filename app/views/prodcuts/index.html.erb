@@ -2,7 +2,7 @@
 
 <h1>Prodcuts</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -20,12 +20,12 @@
     <% @prodcuts.each do |prodcut| %>
       <tr>
         <td><%= prodcut.name %></td>
-        <td><%= prodcut.price %></td>
+        <td><%= number_to_currency(prodcut.price, :precision => (prodcut.price.round == prodcut.price) ? 0 :2) %></td>
         <td><%= prodcut.quantity %></td>
         <td><%= prodcut.description %></td>
         <td><%= prodcut.brand %></td>
         <td><%= prodcut.rating %></td>
-        <td><%= prodcut.category_id %></td>
+        <td><%= prodcut.category.name %></td>
         <td><%= link_to 'Show', prodcut %></td>
         <td><%= link_to 'Edit', edit_prodcut_path(prodcut) %></td>
         <td><%= link_to 'Destroy', prodcut, method: :delete, data: { confirm: 'Are you sure?' } %></td>
